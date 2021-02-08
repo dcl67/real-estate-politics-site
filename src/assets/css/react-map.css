@@ -1,0 +1,18 @@
+path {
+    pointer-events: all;
+}
+
+path:hover {
+    opacity: 0.50;
+    cursor: pointer;
+}
+
+.popover_class {
+    margin-top: 10px;
+    border: 1px;
+}
+
+.MuiPaper-elevation8 {
+    width: 30em;
+    height: 10em;
+}
