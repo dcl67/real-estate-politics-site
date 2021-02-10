@@ -64,3 +64,5 @@ typings/
 .env
 
 .vscode
+# Data json files
+*data*.json
