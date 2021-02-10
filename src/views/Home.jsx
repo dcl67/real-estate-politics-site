@@ -168,7 +168,7 @@ export default class Home extends React.Component {
 
                 <div>
                     <span style={{color: "white"}}>Real Estate Money in Politics</span>
-                    <USAMap onClick={this.mapHandler} />
+                    <USAMap title={"US State map"} onClick={this.mapHandler} />
                     <Popover
                         id={this.id}
                         open={this.state.open}
