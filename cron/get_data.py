@@ -64,7 +64,7 @@ STATES_DICT = {
 
 def get_four_years_back():
     now = datetime.datetime.now()
-    return "{},{},{},{}".format(now.year,now.year-1,now.year-2,now.year-3)
+    return "{},{},{},{},{}".format(now.year,now.year-1,now.year-2,now.year-3,now.year-4)
 
 
 def is_float(number):
@@ -93,6 +93,7 @@ def get_sums_by_state(data):
             data_dict[record["Officeholder_Jurisdiction"]["Officeholder_Jurisdiction"]][record["Contributor"]["id"]] = {
                 "contributor": record["Contributor"]["Contributor"],
                 "officeholder": record["Officeholder"]["Officeholder"],
+                "office_held": record["Office_Held"]["Office_Held"],
                 "party_contributed_to": record["Specific_Party"]["Specific_Party"],
                 "officeholder_jurisdiction_contributed_to": record["Officeholder_Jurisdiction"]["Officeholder_Jurisdiction"],
                 "total_money": 0.00
@@ -104,9 +105,9 @@ def get_sums_by_state(data):
     for state in data_dict:
         state_data[state] = {}
         for key, value in data_dict[state].items():
-            if value["officeholder"] not in state_data[state]:
-                state_data[state][value["officeholder"]] = {}
-            state_data[state][value["officeholder"]][value["contributor"]] = float(str(round(value["total_money"], 2)))
+            if value["officeholder"] + "&" + value["office_held"] not in state_data[state]:
+                state_data[state][value["officeholder"] + "&" + value["office_held"]] = {}
+            state_data[state][value["officeholder"] + "&" + value["office_held"]][value["contributor"]] = float(str(round(value["total_money"], 2)))
     full_state_file_path = os.path.join(os.getcwd(), "src/state_data.json")
     state_file = open(full_state_file_path, "w+")
     state_file.write(json.dumps(state_data, indent=4))
@@ -147,27 +148,28 @@ if __name__ == "__main__":
     years = get_four_years_back()
     # Get first batch of contributions
     first_url = "https://api.followthemoney.org/?limchk=1&" +\
-        "p={page_number}&f-y={years}&d-cci=51&" +\
+        "law-y=2021&p={page_number}&f-y={years}&d-cci=51&" +\
         "gro=law-eid,law-did,law-pt,law-s,d-eid&mode=json&" +\
-        "APIKey={api_key}"
+        "rpp=3000&APIKey={api_key}"
     response = requests.get(
         first_url.format(page_number=page_number, years=years, api_key=API_KEY))
     data = response.json()
     logging.info("First request came back.")
     total_pages = data["metaInfo"]["paging"]["maxPage"]
+    # total_pages = 5 # For testing purposes
     data_out = data_out + data["records"]
     page_number += 1
     logging.info("Now beginning to parse {max} pages.".format(
         max=total_pages))
     while page_number <= total_pages:
         url = "https://api.followthemoney.org/?limchk=1&" +\
-            "p={page_number}&f-y={years}&d-cci=51&" +\
+            "law-y=2021&p={page_number}&f-y={years}&d-cci=51&" +\
             "gro=law-eid,law-did,law-pt,law-s,d-eid&mode=json&" +\
-            "APIKey={api_key}"
+            "rpp=3000&APIKey={api_key}"
         print("Contributors query - {page_number}/{total_pages}".format(
-            page_number=page_number, years=years, total_pages=total_pages))
+            page_number=page_number, total_pages=total_pages))
         processing_response = requests.get(
-            url.format(page_number=page_number, api_key=API_KEY))
+            url.format(page_number=page_number, years=years, api_key=API_KEY))
         if processing_response.status_code != HTTPStatus.OK:
             print(
                 "Page number: {page_number} returned status {status}".format(
@@ -185,23 +187,24 @@ if __name__ == "__main__":
 
     # Get independent expenditures
     expend_url = "https://api.followthemoney.org/?limchk=1&" +\
-        "p={page_number}&f-y=2020,2019,2018,2017&d-cci=51&" +\
+        "law-y=2021&p={page_number}&f-y={years}&d-cci=51&" +\
         "gro=law-eid,law-did,law-pt,law-s,d-eid&mode=json&" +\
-        "APIKey={api_key}"
+        "rpp=3000&APIKey={api_key}"
     expend_response = requests.get(
-        expend_url.format(page_number=0, api_key=API_KEY))
+        expend_url.format(page_number=0, years=years, api_key=API_KEY))
     expend_data = expend_response.json()
     total_expend_pages = expend_data["metaInfo"]["paging"]["maxPage"]
+    # total_expend_pages = 5 # For testing purposes
     expend_page_number = 1
     while expend_page_number <= total_expend_pages:
         expend_url = "https://api.followthemoney.org/?limchk=1&" +\
-            "p={page_number}&f-y=2020,2019,2018,2017&d-cci=51&" +\
+            "law-y=2021&p={page_number}&f-y={years}&d-cci=51&" +\
             "gro=law-eid,law-did,law-pt,law-s,d-eid&mode=json&" +\
-            "APIKey={api_key}"
+            "rpp=3000&APIKey={api_key}"
         print("Expenditures query - {page_number}/{total_pages}".format(
-            page_number=expend_page_number, total_pages=total_expend_pages))
+            page_number=expend_page_number, years=years, total_pages=total_expend_pages))
         processing_response = requests.get(
-            expend_url.format(page_number=expend_page_number, api_key=API_KEY))
+            expend_url.format(page_number=expend_page_number, years=years, api_key=API_KEY))
         if processing_response.status_code != HTTPStatus.OK:
             print("Page number: {page_number} returned status {status}".format(
                 page_number=page_number,
