@@ -37,7 +37,7 @@ export default class Methodology extends React.Component {
                 Our numbers include campaign contributions and independent expenditures, which are made on behalf of or against a candidate, but are not allowed in coordination with campaigns.
                 <br/>
                 Independent expenditure data was available for 30 states.
-                <div style={{marginTop: `3em`}}>
+                <div style={{marginTop: `3em`,  position: `absolute`, bottom: 0, width: `100%`}}>
                     <FooterBlack />
                 </div>
             </div>
