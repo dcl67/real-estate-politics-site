@@ -108,7 +108,7 @@ def get_sums_by_state(data):
             if value["officeholder"] + "&" + value["office_held"] not in state_data[state]:
                 state_data[state][value["officeholder"] + "&" + value["office_held"]] = {}
             state_data[state][value["officeholder"] + "&" + value["office_held"]][value["contributor"]] = float(str(round(value["total_money"], 2)))
-    full_state_file_path = os.path.join(os.getcwd(), "src/state_data.json")
+    full_state_file_path = os.path.join(os.getcwd(), "src/data/state_data.json")
     state_file = open(full_state_file_path, "w+")
     state_file.write(json.dumps(state_data, indent=4))
     state_file.close()
@@ -129,7 +129,7 @@ def get_top_50_sums(data):
     while count < 50:
         count += 1
         first_50.append(all_records[sorted_records[count]])
-    full_home_file_path = os.path.join(os.getcwd(), "src/homepage_data.json")
+    full_home_file_path = os.path.join(os.getcwd(), "src/data/homepage_data.json")
     top_50_file = open(full_home_file_path, "w+")
     top_50_file.write(json.dumps(first_50, indent=4))
     top_50_file.close()
@@ -220,7 +220,7 @@ if __name__ == "__main__":
         expend_page_number += 1
     get_sums_by_state(data_out)
 
-    full_file_path = os.path.join(os.getcwd(), "src/data.json")
+    full_file_path = os.path.join(os.getcwd(), "src/data/data.json")
     file = open(full_file_path, "w+")
     file.write(json.dumps(data_out, indent=4))
     file.close()
