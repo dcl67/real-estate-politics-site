@@ -1,17 +1,64 @@
+/*!
+
+=========================================================
+* Now UI Kit PRO React - v1.4.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/now-ui-kit-pro-react
+* Copyright 2020 Creative Tim (http://www.creative-tim.com)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
 import React from "react";
 import ReactDOM from "react-dom";
-import { createBrowserHistory } from "history";
-import { Router, Route, Switch } from "react-router-dom";
-import Common from "layouts/Common.jsx";
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
 
-
-const hist = createBrowserHistory();
+// styles
+import "assets/css/bootstrap.min.css";
+import "assets/scss/now-ui-kit.scss?v=1.4.0";
+import "assets/demo/demo.css?v=1.4.0";
+import "assets/demo/react-demo.css?v=1.4.0";
+import "assets/demo/nucleo-icons-page-styles.css?v=1.4.0";
+// pages
+import Presentation from "views/Presentation.js";
+import States from "views/States";
+import Records from "views/Records";
+import Methodology from "views/Methodology";
+// others
 
 ReactDOM.render(
-    <Router history={hist}>
-        <Switch>
-            <Route path="/" render={props => <Common {...props} />}/>
-        </Switch>
-    </Router>,
-    document.getElementById("root")
+  <BrowserRouter>
+    <Switch>
+      <Route
+        exact
+        path="/"
+        render={(props) => <Presentation {...props}/>}
+      />
+      <Route
+        path="/home"
+        render={(props) => <Presentation {...props}/>}
+      />
+      <Route
+        path="/methodology"
+        render={(props) => <Methodology {...props}/>}
+      />
+      <Route
+        path="/states"
+        render={(props) => <States {...props}/>}
+      />
+      <Route
+        exact
+        // path="/states/records"
+        path="/records"
+        render={(props) => <Records {...props}/>}
+      />
+      <Redirect to="/" />
+    </Switch>
+  </BrowserRouter>,
+  document.getElementById("root")
 );

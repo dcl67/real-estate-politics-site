@@ -1,7 +1,9 @@
 import React from "react";
+import ScrollTransparentNavbar from "components/Navbars/ScrollTransparentNavbar.js";
+import FooterBlack from "components/Footers/FooterBlack.js";
 import Button from '@material-ui/core/Button';
 import MUIDataTable from "mui-datatables";
-import jsonData from "../state_data.json";
+import jsonData from "../data/state_data.json";
 import {statesReversed as states} from "variables/Variables";
 import { Link } from "react-router-dom";
 const queryString = require('query-string');
@@ -24,6 +26,14 @@ export default class States extends React.Component {
             {
                 name: "Recipient",
                 label: "Recipient",
+                options: {
+                    filter: true,
+                    sort: false
+                }
+            },
+            {
+                name: "Office Held",
+                label: "Office Held",
                 options: {
                     filter: true,
                     sort: false
@@ -112,16 +122,19 @@ export default class States extends React.Component {
         }
         sortData.sort((a,b) => (a.value > b.value) ? -1 : (a.value === b.value) ? ((a.recipient > b.recipient) ? -1 : 1) : 1);
         sortData.forEach((record) => {
+            let recordRecipient = record.recipient.split('&')
             rowData.push([
                 <Link to={{
-                    pathname: "states/record-details",
+                    pathname: "/records",
                     state: {
-                        detailedData: jsonData[states[this.state.state]][record.recipient]
+                        detailedData: jsonData[states[this.state.state]][record.recipient],
+                        positionHeld: this.capitalizeString(recordRecipient[1])
                     },
-                    search: "?recipient=" + record.recipient + "&state=" + this.state.state
+                    search: "?recipient=" + recordRecipient[0] + "&state=" + this.state.state
                 }}>
-                    {record.recipient}
+                    {recordRecipient[0]}
                 </Link>,
+                this.capitalizeString(recordRecipient[1]),
                 "$ " + this.numberWithCommas(record.value.toFixed(2))
             ])
         })
@@ -152,10 +165,12 @@ export default class States extends React.Component {
         sortData.sort((a,b) => (a.value > b.value) ? -1 : (a.value === b.value) ? ((a.donor > b.donor) ? -1 : 1) : 1);
 
         while (count < 15) {
-            rowData.push([
-                sortData[count].donor,
-                "$ " + this.numberWithCommas(sortData[count].value.toFixed(2))
-            ])
+            if (sortData[count] !== undefined) {
+                rowData.push([
+                    sortData[count].donor,
+                    "$ " + this.numberWithCommas(sortData[count].value.toFixed(2))
+                ])
+            }
             count++;
         }
         this.setState({
@@ -189,12 +204,15 @@ export default class States extends React.Component {
     render() {
         return(
             <div>
-                <div>
+                <div style={{marginBottom: `7em`}}>
+                    <ScrollTransparentNavbar />
+                </div>
+                <div style={{marginLeft: `6%`}}>
                     <h3>
-                        States
+                        <strong>States</strong>
                     </h3>
                 </div>
-                <div style={{marginTop: `2em`, marginLeft: `40%`, marginBottom: `3em`}}>
+                <div style={{marginTop: `1em`, marginLeft: `40%`, marginBottom: `3em`}}>
                     <span>
                         <Button variant="contained" disabled={this.state.isRecipient ? true : false} onClick={() => {this.setRecipient()}}>Recipient</Button>
                     </span>
@@ -203,7 +221,7 @@ export default class States extends React.Component {
                     </span>
                 </div>
 
-                <div>
+                <div style={{marginLeft: `6%`, width: `87%`}}>
                     {this.state.isRecipient ?
                         <MUIDataTable
                             title={"Top recipients for the state of " + this.state.state}
@@ -219,6 +237,9 @@ export default class States extends React.Component {
                             options={this.options}
                         />
                     }
+                </div>
+                <div style={{marginTop: `3em`}}>
+                    <FooterBlack />
                 </div>
             </div>
         )

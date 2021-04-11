@@ -1,36 +1,63 @@
 {
-    "name": "real-estate-politics-site",
-    "homepage": "./",
-    "version": "1.0.0",
-    "private": true,
-    "dependencies": {
-        "@material-ui/core": "^4.11.0",
-        "@material-ui/icons": "^4.9.1",
-        "json-loader": "^0.5.7",
-        "mui-datatables": "^3.4.1",
-        "query-string": "^6.13.1",
-        "react": "16.13.0",
-        "react-dom": "16.13.0",
-        "react-router-dom": "^5.1.2",
-        "react-scripts": "^3.4.3",
-        "react-tooltip": "^4.2.9",
-        "react-usa-map": "^1.5.0",
-        "webpack": "4.42.0"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "eject": "react-scripts eject",
-        "webpack-start": "webpack --progress",
-        "webpack-prod": "webpack -p --progress"
-    },
-    "eslintConfig": {
-        "extends": "react-app"
-    },
-    "browserslist": [
-        ">0.2%",
-        "not dead",
-        "not ie <= 11",
-        "not op_mini all"
+  "name": "now-ui-kit-pro-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "moment": "2.26.0",
+    "mui-datatables": "^3.7.6",
+    "node-sass": "4.14.1",
+    "nouislider": "14.5.0",
+    "react": "^16.13.1",
+    "react-bootstrap-switch": "15.5.3",
+    "react-datetime": "2.16.3",
+    "react-dnd": "^14.0.1",
+    "react-dom": "^16.13.1",
+    "react-google-maps": "9.4.5",
+    "react-router": "5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "react-select": "3.1.0",
+    "react-tagsinput": "3.19.0",
+    "react-usa-map": "^1.5.0",
+    "reactstrap": "8.4.1",
+    "rellax": "1.12.1",
+    "video-react": "^0.14.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && gulp licenses",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "compile-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.css",
+    "minify-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.min.css --output-style compressed",
+    "map-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.css --source-map true"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
+  },
+  "optionalDependencies": {
+    "@types/googlemaps": "3.39.6",
+    "@types/markerclustererplus": "2.1.33",
+    "@types/react": "16.9.36",
+    "typescript": "3.9.5"
+  },
+  "devDependencies": {
+    "gulp": "4.0.2",
+    "gulp-append-prepend": "1.0.8"
+  }
 }

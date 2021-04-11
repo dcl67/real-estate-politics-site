@@ -3,7 +3,8 @@ path {
 }
 
 path:hover {
-    opacity: 0.50;
+    fill: #f77f00;
+    /* opacity: 0.50; */
     cursor: pointer;
 }
 
