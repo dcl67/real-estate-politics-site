@@ -34,30 +34,31 @@ import Methodology from "views/Methodology";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
+      {/* <Route
+        exact
+        path="/bought-and-sold"
+        render={(props) => <Presentation {...props}/>}
+      /> */}
       <Route
         exact
-        path="/"
+        path="/bought-and-sold/"
         render={(props) => <Presentation {...props}/>}
       />
       <Route
-        path="/home"
-        render={(props) => <Presentation {...props}/>}
-      />
-      <Route
-        path="/methodology"
+        path="/bought-and-sold/methodology"
         render={(props) => <Methodology {...props}/>}
       />
       <Route
-        path="/states"
+        path="/bought-and-sold/states"
         render={(props) => <States {...props}/>}
       />
       <Route
         exact
         // path="/states/records"
-        path="/records"
+        path="/bought-and-sold/records"
         render={(props) => <Records {...props}/>}
       />
-      <Redirect to="/" />
+      <Redirect to="/bought-and-sold/" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
