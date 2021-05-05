@@ -180,26 +180,39 @@ componentDidMount() {
                     Electeds: Bought and Sold
                   </small>
                 </h2> */}
+                <div>
+                <h3 className="text-center" style={{width: `85%`, color: `black`, textAlign: `center`, marginTop: `2em`, marginRight: `2em`}}>
+                  <strong>
+                    Why is it that instead of housing justice, we get solutions that work for the real estate industry while the rest of us suffer?
+                  </strong>
+                </h3>
+
                 <h5 className="text-center description" style={{width: `85%`, color: `black`, textAlign: `center`, marginRight: `2em`}}>
-                <strong>Why is it that instead of housing justice, we get solutions that work for the real estate industry while the rest of us suffer? </strong><br/><br/>
+                  The answer is real estate money in politics. <br/><br/>
+                  It’s time to ask our elected officials: who do you work for? The real estate industry, or the people you represent?
+                </h5><br/>
 
-                The answer is real estate money in politics. <br/><br/>
-                It’s time to ask our elected officials: who do you work for? The real estate industry, or the people you represent?<br/>
-
-                </h5>
+                </div>
                 </Col>
                 <Col xs={12} md={12} style={{backgroundColor: "white"}}>
-                <h5 className="text-center description" style={{width: `85%`, color: `black`, textAlign: `center`, marginLeft: `8%`}}>
+                <div className="text-center description" style={{width: `85%`, color: `black`, textAlign: `center`, marginLeft: `8%`}}>
 
-                <br/><strong>How to use this site</strong><br/><br/>
+                <br/>
+                <h3 className="text-center" style={{width: `85%`, color: `black`, textAlign: `center`, marginLeft: `2.8em`}}>
+                  <strong>
+                    How to use this site
+                  </strong>
+                </h3>
 
-                Hover over states in the map below to see the top 3 real estate donors in each state, click on any state for more donors and more detail.<br/><br/>
+                <h5 className="text-center description" style={{width: `85%`, color: `black`, textAlign: `center`, marginLeft: `3.7em`}}>
+                  Hover over states in the map below to see the top 3 real estate donors in each state, click on any state for more donors and more detail. On the state page you can toggle between donors and recipients.
+                  <br/><br/>
 
-                Below the map there’s a table with the top donors in the country for the last 5 years.<br/><br/>
-
-                For more detail on top contributors and top recipients by state, click on the state and toggle between donors and recipients.<br/><br/>
-
+                  Below the map there’s a table with the top donors in the country for the last 5 years.
                 </h5>
+                <br/>
+
+                </div>
                 <div className="space-50"></div>
               </Col>
             </Row>
@@ -228,7 +241,7 @@ componentDidMount() {
                     },
                     search: "?state=" + states[this.state.popUpState]
                   }}>
-                    {states[this.state.popUpState]}
+                    <h4><strong>{states[this.state.popUpState]}</strong></h4>
                   </Link>
                     <div>Top recipients:</div>
                     {this.state.stateRecipientsData ?
@@ -243,7 +256,9 @@ componentDidMount() {
               <Col className="">
                 <div  style={{textAlign: `center`, marginLeft: `3%`}}>
                   <br/>
-                  Everyone should know these names and their relationships to our elected officials.
+                  <h4>
+                    Everyone should know these names and their relationships to our elected officials.
+                  </h4>
                   <br/>
                 </div>
               <div style={{marginTop: `2em`, width: `85%`, marginLeft: `7.4%`}}>
