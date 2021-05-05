@@ -28,7 +28,7 @@ function ScrollTransparentNavbar() {
       <Navbar className={"fixed-top" + navbarColor} color="white" expand="lg">
         <Container>
           <div className="navbar-translate">
-          <NavbarBrand to="/" tag={Link} id="navbar-brand">
+          <NavbarBrand to="/bought-and-sold/" tag={Link} id="navbar-brand">
             <img src={require("assets/img/logo2.png")}
               style={{width: `40%`, height: `auto`, marginRight: `0.8em`}}
               alt="ACRE campaigns logo"

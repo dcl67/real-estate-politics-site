@@ -3,6 +3,7 @@ import React from "react";
 
 // reactstrap components
 import { Container } from "reactstrap";
+import { Link } from "react-router-dom";
 
 // core components
 
@@ -22,18 +23,17 @@ function FooterBlack() {
                 </a>
               </li>
               <li>
-                <a
-                  href="/"
-                >
+                <Link
+                  to="/bought-and-sold/">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/methodology"
+                <Link
+                  to="/bought-and-sold/methodology"
                 >
                   Methodology
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

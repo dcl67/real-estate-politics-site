@@ -125,7 +125,7 @@ export default class States extends React.Component {
             let recordRecipient = record.recipient.split('&')
             rowData.push([
                 <Link to={{
-                    pathname: "/records",
+                    pathname: "records",
                     state: {
                         detailedData: jsonData[states[this.state.state]][record.recipient],
                         positionHeld: this.capitalizeString(recordRecipient[1])
