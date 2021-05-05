@@ -22,21 +22,20 @@ export default class Methodology extends React.Component {
                 <div style={{marginBottom: `7em`}}>
                     <ScrollTransparentNavbar />
                 </div>
-                <div>
+                <div style={{marginLeft: `1.5em`}}>
                     <h3>
                         Methodology
                     </h3>
                 </div>
-                Special thanks to the National Institute for Money in Politics.
-                <br/>
-                Their important work and comprehensive data made this project possible.
-                <br/>
+                <div style={{marginLeft: `2em`}}>
+                    Special thanks to the National Institute for Money in Politics. Their important work and comprehensive data made this project possible.
+                    <br/><br/>
 
-                To compile this information, we pulled campaign spending for the past 5 years focused on current officeholders in state and federal elected office.
-                <br/>
-                Our numbers include campaign contributions and independent expenditures, which are made on behalf of or against a candidate, but are not allowed in coordination with campaigns.
-                <br/>
-                Independent expenditure data was available for 30 states.
+                    To compile this information, we pulled campaign spending for the past 5 years focused on current officeholders in state and federal elected office.
+                    <br/>
+                    Our numbers include campaign contributions and independent expenditures, which are made on behalf of or against a candidate, but are not<br/>
+                    allowed in coordination with campaigns. Independent expenditure data was available for 30 states.
+                </div>
                 <div style={{marginTop: `3em`,  position: `absolute`, bottom: 0, width: `100%`}}>
                     <FooterBlack />
                 </div>

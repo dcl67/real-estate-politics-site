@@ -183,7 +183,7 @@ componentDidMount() {
                 <h5 className="text-center description" style={{width: `85%`, color: `black`, textAlign: `center`, marginRight: `2em`}}>
                 <strong>Why is it that instead of housing justice, we get solutions that work for the real estate industry while the rest of us suffer? </strong><br/><br/>
 
-                The answer is real estate money in politics. <br/>
+                The answer is real estate money in politics. <br/><br/>
                 It’s time to ask our elected officials: who do you work for? The real estate industry, or the people you represent?<br/>
 
                 </h5>
@@ -193,7 +193,11 @@ componentDidMount() {
 
                 <br/><strong>How to use this site</strong><br/><br/>
 
-                The map below shows the top 3 real estate donors in each state. Below the map there’s a table with the top donors in the country for the last 5 years. For more detail on top contributors and top recipients by state, click on the state.<br/><br/>
+                Hover over states in the map below to see the top 3 real estate donors in each state, click on any state for more donors and more detail.<br/><br/>
+
+                Below the map there’s a table with the top donors in the country for the last 5 years.<br/><br/>
+
+                For more detail on top contributors and top recipients by state, click on the state and toggle between donors and recipients.<br/><br/>
 
                 </h5>
                 <div className="space-50"></div>
