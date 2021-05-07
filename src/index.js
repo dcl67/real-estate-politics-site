@@ -41,6 +41,7 @@ ReactDOM.render(
       /> */}
       <Route
         exact
+        strict
         path="/bought-and-sold/"
         render={(props) => <Presentation {...props}/>}
       />
