@@ -241,7 +241,7 @@ componentDidMount() {
                     },
                     search: "?state=" + states[this.state.popUpState]
                   }}>
-                    <h4><strong>{states[this.state.popUpState]}</strong></h4>
+                    <h5><strong>{states[this.state.popUpState]}</strong></h5>
                   </Link>
                     <div>Top recipients:</div>
                     {this.state.stateRecipientsData ?
