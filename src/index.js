@@ -46,16 +46,17 @@ ReactDOM.render(
         render={(props) => <Presentation {...props}/>}
       />
       <Route
+        exact
         path="/bought-and-sold/methodology"
         render={(props) => <Methodology {...props}/>}
       />
       <Route
+        exact
         path="/bought-and-sold/states"
         render={(props) => <States {...props}/>}
       />
       <Route
         exact
-        // path="/states/records"
         path="/bought-and-sold/records"
         render={(props) => <Records {...props}/>}
       />

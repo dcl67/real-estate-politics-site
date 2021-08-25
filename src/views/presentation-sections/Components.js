@@ -208,7 +208,7 @@ componentDidMount() {
                   Click on any state name for more detail. On each state page toggle between donors and recipients at the top, and click on an elected’s name to see their donors
                 <br/><br/>
 
-                  See our <a href="/bought-and-sold/methodology" style={{color: `#003049`}}><strong>methodology page</strong></a> for more info and FAQs
+                  See our <Link to="/bought-and-sold/methodology" style={{color: `#003049`}}><strong>methodology page</strong></Link> for more info and FAQs
                 </h5>
                 <br/>
 
