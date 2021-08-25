@@ -185,7 +185,7 @@ componentDidMount() {
                     Why is it that instead of housing justice, our elected officials work for the real estate industry?<br/>
                   </h3>
 
-                  <h3 className="text-center description" style={{width: `85%`, color: `black`, textAlign: `center`, marginRight: `2em`}}>
+                  <h3 className="text-center" style={{width: `85%`, color: `black`, textAlign: `center`, marginRight: `2em`, fontWight: `400`}}>
                     <strong>The answer is real estate money in politics.</strong><br/>
                   </h3><br/>
 
