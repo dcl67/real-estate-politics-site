@@ -35,18 +35,9 @@ function ScrollTransparentNavbar() {
             />
               {/* ACRE Campaigns */}
           </NavbarBrand>
-            <button
-              onClick={() => {
-                document.documentElement.classList.toggle("nav-open");
-                setCollapseOpen(!collapseOpen);
-              }}
-              aria-expanded={collapseOpen}
-              className="navbar-toggler"
-            >
-              <span className="navbar-toggler-bar top-bar"></span>
-              <span className="navbar-toggler-bar middle-bar"></span>
-              <span className="navbar-toggler-bar bottom-bar"></span>
-            </button>
+            <Link to="/bought-and-sold/methodology" style={{position: `absolute`, right: `0`, paddingRight: `4%`, marginTop: `1.2%`}}>
+              <span style={{fontSize: `18px`}}>Methodology</span>
+            </Link>
           </div>
         </Container>
       </Navbar>

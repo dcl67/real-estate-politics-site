@@ -36,10 +36,10 @@ function PresentationHeader() {
             }}
           ></div>
         </div>
-        <div className="h3-description" style={{backgroundColor: `#F77F00`, textAlign: `center`, margin: `auto`, width: `50%`, marginTop: `-11.1em`, paddingTop: `-11.1em`, marginLeft: `24.5%`, height: `2.3em`}}/>
+        <div className="h3-description" style={{backgroundColor: `#F77F00`, textAlign: `center`, margin: `auto`, width: `54.5%`, marginTop: `-11.1em`, paddingTop: `-11.1em`, marginLeft: `24.5%`, height: `5em`}}/>
         <h3 className="h3-description rellax-text" data-rellax-speed="-1" style={{marginTop: `-6.5em`, paddingTop: `-6.5em`}}>
-          <div style={{backgroundColor: `#FCBF49`, textAlign: `center`, margin: `auto`, width: `50%`}}>
-          <strong>Real Estate Money in Politics</strong>
+          <div style={{backgroundColor: `#FCBF49`, textAlign: `center`, margin: `auto`, width: `55%`, height: `2.6em`, paddingTop: `0.9%`}}>
+          <strong style={{fontSize: `175%`,}}>Real Estate Money in Politics</strong>
           </div>
         </h3>
         <div className="rellax-text-container rellax-text">

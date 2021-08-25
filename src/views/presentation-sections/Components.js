@@ -169,7 +169,7 @@ componentDidMount() {
             <Row>
               <Col xs={12} md={4} style={{backgroundColor: "white"}}>
                 <img
-                  style={{marginLeft: `1em`, marginTop: `1em`, width: `85%`, height: `auto`}}
+                  style={{marginLeft: `2em`, marginTop: `2em`, width: `85%`, height: `auto`}}
                   src={require("assets/img/presentation-page/30271935096_e2ee2c806d_o.jpg")}
                   alt="group of people"
                 />
@@ -181,16 +181,13 @@ componentDidMount() {
                   </small>
                 </h2> */}
                 <div>
-                <h3 className="text-center" style={{width: `85%`, color: `black`, textAlign: `center`, marginTop: `2em`, marginRight: `2em`}}>
-                  <strong>
-                    Why is it that instead of housing justice, we get solutions that work for the real estate industry while the rest of us suffer?
-                  </strong>
-                </h3>
+                <h5 className="text-center" style={{width: `85%`, color: `black`, textAlign: `center`, marginTop: `4em`, marginRight: `2em`}}>
+                    Why is it that instead of housing justice, our elected officials work for the real estate industry?<br/><br/><br/>
+                </h5>
 
-                <h5 className="text-center description" style={{width: `85%`, color: `black`, textAlign: `center`, marginRight: `2em`}}>
-                  The answer is real estate money in politics. <br/><br/>
-                  It’s time to ask our elected officials: who do you work for? The real estate industry, or the people you represent?
-                </h5><br/>
+                <h3 className="text-center description" style={{width: `85%`, color: `black`, textAlign: `center`, marginRight: `2em`}}>
+                  <strong>The answer is real estate money in politics.</strong><br/>
+                </h3><br/>
 
                 </div>
                 </Col>
@@ -205,10 +202,13 @@ componentDidMount() {
                 </h3>
 
                 <h5 className="text-center description" style={{width: `85%`, color: `black`, textAlign: `center`, marginLeft: `3.7em`}}>
-                  Hover over states in the map below to see the top 3 real estate donors in each state, click on any state for more donors and more detail. On the state page you can toggle between donors and recipients.
-                  <br/><br/>
+                  Click on a state in the map below to see which sitting electeds netted the most real estate money over the last 5 years.
+                <br/><br/>
 
-                  Below the map there’s a table with the top donors in the country for the last 5 years.
+                  Click on any state name for more detail. On each state page toggle between donors and recipients at the top, and click on an elected’s name to see their donors
+                <br/><br/>
+
+                  See our <a href="/bought-and-sold/methodology" style={{color: `#003049`}}><strong>methodology page</strong></a> for more info and FAQs
                 </h5>
                 <br/>
 
@@ -234,6 +234,7 @@ componentDidMount() {
                     horizontal: 'center',
                   }}
                 >
+                  <div style={{marginTop: `1%`, marginLeft: `2%`}}>
                   <Link to={{
                     pathname: "states",
                     state: {
@@ -249,6 +250,7 @@ componentDidMount() {
                     :
                       null
                     }
+                    </div>
                 </Popover>
               </Col>
             </Row>
@@ -257,7 +259,7 @@ componentDidMount() {
                 <div  style={{textAlign: `center`, marginLeft: `3%`}}>
                   <br/>
                   <h4>
-                    Everyone should know these names and their relationships to our elected officials.
+                    <strong>Below are the top 50 donors to sitting elected officials over the past 5 years.<br/>Everyone should know these names.</strong>
                   </h4>
                   <br/>
                 </div>
