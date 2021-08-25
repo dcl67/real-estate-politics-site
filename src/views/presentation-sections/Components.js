@@ -181,39 +181,39 @@ componentDidMount() {
                   </small>
                 </h2> */}
                 <div>
-                <h5 className="text-center" style={{width: `85%`, color: `black`, textAlign: `center`, marginTop: `4em`, marginRight: `2em`}}>
-                    Why is it that instead of housing justice, our elected officials work for the real estate industry?<br/><br/><br/>
-                </h5>
+                  <h3 className="text-center" style={{width: `85%`, color: `black`, textAlign: `center`, marginTop: `2.6em`, marginRight: `2em`}}>
+                    Why is it that instead of housing justice, our elected officials work for the real estate industry?<br/>
+                  </h3>
 
-                <h3 className="text-center description" style={{width: `85%`, color: `black`, textAlign: `center`, marginRight: `2em`}}>
-                  <strong>The answer is real estate money in politics.</strong><br/>
-                </h3><br/>
+                  <h3 className="text-center description" style={{width: `85%`, color: `black`, textAlign: `center`, marginRight: `2em`}}>
+                    <strong>The answer is real estate money in politics.</strong><br/>
+                  </h3><br/>
 
                 </div>
-                </Col>
-                <Col xs={12} md={12} style={{backgroundColor: "white"}}>
+              </Col>
+              <Col xs={12} md={12} style={{backgroundColor: "white"}}>
                 <div className="text-center description" style={{width: `85%`, color: `black`, textAlign: `center`, marginLeft: `8%`}}>
 
-                <br/>
-                <h3 className="text-center" style={{width: `85%`, color: `black`, textAlign: `center`, marginLeft: `2.8em`}}>
-                  <strong>
-                    How to use this site
-                  </strong>
-                </h3>
+                  <br/>
+                  <h3 className="text-center" style={{width: `85%`, color: `black`, textAlign: `center`, marginLeft: `2.8em`}}>
+                    <strong>
+                      How to use this site
+                    </strong>
+                  </h3>
 
-                <h5 className="text-center description" style={{width: `85%`, color: `black`, textAlign: `center`, marginLeft: `3.7em`}}>
-                  Click on a state in the map below to see which sitting electeds netted the most real estate money over the last 5 years.
-                <br/><br/>
+                  <h5 className="text-center description" style={{width: `85%`, color: `black`, textAlign: `center`, marginLeft: `3.7em`}}>
+                    Click on a state in the map below to see which sitting electeds netted the most real estate money over the last 5 years.
+                  <br/><br/>
 
-                  Click on any state name for more detail. On each state page toggle between donors and recipients at the top, and click on an elected’s name to see their donors
-                <br/><br/>
+                    Click on any state name for more detail. On each state page toggle between donors and recipients at the top, and click on an elected’s name to see their donors
+                  <br/><br/>
 
-                  See our <Link to="/bought-and-sold/methodology" style={{color: `#003049`}}><strong>methodology page</strong></Link> for more info and FAQs
-                </h5>
-                <br/>
+                    See our <Link to="/bought-and-sold/methodology" style={{color: `#003049`}}><strong>methodology page</strong></Link> for more info and FAQs
+                  </h5>
+                  <br/>
 
                 </div>
-                <div className="space-50"></div>
+                {/* <div className="space-50"></div> */}
               </Col>
             </Row>
             <Row>
