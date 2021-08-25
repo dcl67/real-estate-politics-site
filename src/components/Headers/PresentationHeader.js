@@ -31,7 +31,7 @@ function PresentationHeader() {
             style={{
               backgroundImage:
                 "url(" +
-                require("assets/img/presentation-page/webhero-filter.png") +
+                require("assets/img/presentation-page/webhero-filter.jpg") +
                 ")",
             }}
           ></div>
